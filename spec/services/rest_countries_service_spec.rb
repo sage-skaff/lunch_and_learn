@@ -16,6 +16,8 @@ RSpec.describe RestCountriesService do
   end
 
   it 'gets a country by name' do
+    country = 'Peru'
+
     response = RestCountriesService.get_country(country)
 
     expect(response).to be_a(Array)
