@@ -27,3 +27,6 @@
 
 # Ignore fixture files
 /spec/fixtures
+
+# Ignore simplecov
+/coverage
