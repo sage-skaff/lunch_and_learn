@@ -5,7 +5,7 @@ class Country
 
   def initialize(country_info, country_name)
     @name = country_name.capitalize
-    @demonym = country_info[:demonyms][:eng][:f]
-    @subregion = country_info[:subregion]
+    @demonym = country_info.first[:demonyms][:eng][:f]
+    @subregion = country_info.first[:subregion]
   end
 end

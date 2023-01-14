@@ -1,9 +1,10 @@
 # frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe Country do
   it 'exists' do
-    country_info = {
+    country_info = [{
       name: {
         common: 'Thailand'
       },
@@ -13,7 +14,7 @@ RSpec.describe Country do
         }
       },
       subregion: 'South-Eastern Asia'
-    }
+    }]
     country_name = 'Thailand'
 
     country = Country.new(country_info, country_name)
