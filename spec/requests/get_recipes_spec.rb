@@ -6,7 +6,7 @@ RSpec.describe 'Get Recipes' do
 
         get "/api/v1/recipes?country=#{country}"
 
-        expect(response).to be successful
+        expect(response).to be_successful
 
         parsed_response = JSON.parse(response.body, symbolize_names: true)
 
