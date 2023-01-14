@@ -6,8 +6,8 @@ class EdamamService
         end
     end
 
-    def self.get_recipes_by_country(country)
-        response = conn.get("https://api.edamam.com/api/recipes/v2?type=public&q=#{country}")
+    def self.search_recipes(query)
+        response = conn.get("https://api.edamam.com/api/recipes/v2?type=public&q=#{query}")
 
         JSON.parse(response.body.gsub('null', '"null"'), symbolize_names: true)
     end
