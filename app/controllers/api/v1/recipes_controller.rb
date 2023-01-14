@@ -1,6 +1,9 @@
-class Api::V1::RecipesController < ApplicationController
-    def index
-        
+# frozen_string_literal: true
 
+module Api
+  module V1
+    class RecipesController < ApplicationController
+      def index; end
     end
+  end
 end
