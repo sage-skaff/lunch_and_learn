@@ -6,14 +6,16 @@ RSpec.describe LearningResource do
   it 'exists' do
     country = 'Portugal'
 
-    image_data = [{
-      alt_description: 'image1_alt_description',
-      urls: { raw: 'image1_url' }
-    },
-    { 
-      alt_description: 'image2_alt_description',
-      urls: { raw: 'image2_url' }
-      }]
+    image_data = [
+      {
+        alt_description: 'image1_alt_description',
+        urls: { raw: 'image1_url' }
+      },
+      {
+        alt_description: 'image2_alt_description',
+        urls: { raw: 'image2_url' }
+      }
+    ]
 
     video_data = {
       items: [
