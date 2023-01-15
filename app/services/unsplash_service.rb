@@ -8,7 +8,7 @@ class UnsplashService
     end
 
     def self.search_for_image(query)
-        response = conn.get("/search/photos?query=#{query}")
+        response = conn.get("/photos/random?query=#{query}&count=10")
 
         JSON.parse(response.body, symbolize_names: true)
     end
