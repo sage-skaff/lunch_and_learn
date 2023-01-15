@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ImageFacade do
+RSpec.describe LearningResourceFacade do
   it 'returns an array of image objects', :vcr do
     images = ImageFacade.images('Thailand')
 
