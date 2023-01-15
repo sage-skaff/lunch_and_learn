@@ -8,7 +8,7 @@ class LearningResourceFacade
   end
 
   def self.video(query)
-    video_data = GoogleApiService.get_video(query)
+    video_data = GoogleApiService.get_educational_video(query)
     Video.new(video_data)
   end
 
