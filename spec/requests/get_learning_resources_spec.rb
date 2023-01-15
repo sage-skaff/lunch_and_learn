@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Get Recipes' do
-  it 'returns recipes by country' do
+  it 'returns learning resources by country', :vcr do
     country = 'Thailand'
 
     get "/api/v1/learning_resources?country=#{country}"

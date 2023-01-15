@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe CountryFacade do
-  it 'creates country object from name search' do
+  it 'creates country object from name search', :vcr do
     country_name = 'Thailand'
     country_object = CountryFacade.country(country_name)
 

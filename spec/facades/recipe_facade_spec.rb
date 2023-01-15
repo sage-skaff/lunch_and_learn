@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe RecipeFacade do
-  it 'gets recipes by country' do
+  it 'gets recipes by country', :vcr do
     country = 'Thailand'
     recipes = RecipeFacade.recipes_by_country(country)
 

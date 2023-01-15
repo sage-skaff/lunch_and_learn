@@ -3,7 +3,7 @@
 require 'rails_helper'
 
 RSpec.describe RestCountriesService do
-  it 'gets a list of all countries' do
+  it 'gets a list of all countries', :vcr do
     response = RestCountriesService.get_all_countries
 
     expect(response).to be_a(Array)
@@ -15,7 +15,7 @@ RSpec.describe RestCountriesService do
     expect(response.first[:name]).to have_key(:common)
   end
 
-  it 'gets a country by name' do
+  it 'gets a country by name', :vcr do
     country = 'Peru'
 
     response = RestCountriesService.get_country(country)
