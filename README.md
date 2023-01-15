@@ -45,10 +45,12 @@ Using [Figaro](https://github.com/laserlemon/figaro)
 ```shell
 bundle exec figaro install
 ```
-add your key and id from [Edamam Recipe Api](https://developer.edamam.com/edamam-recipe-api)
+add your corresponding keys and ids from [Edamam Recipe API](https://developer.edamam.com/edamam-recipe-api), [Unsplash API](https://unsplash.com/documentation), [YouTube API](https://developers.google.com/youtube/v3/getting-started)
 ```yml
 edamam_app_id: 'your_key_goes_here'
 edamam_app_key: 'your_id_goes_here'
+unsplash_id: 'your_id_goes_here'
+youtube_api_key: 'your_key_goes_here'
 ``` 
 
 ### Initialize the database
