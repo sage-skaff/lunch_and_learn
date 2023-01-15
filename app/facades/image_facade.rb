@@ -2,7 +2,7 @@
 
 class ImageFacade
   def self.images(query)
-    UnsplashService.search_for_image(query)[:results].map do |image_data|
+    UnsplashService.search_for_image(query).map do |image_data|
       Image.new(image_data)
     end
   end
