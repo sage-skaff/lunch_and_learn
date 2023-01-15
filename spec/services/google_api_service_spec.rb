@@ -4,7 +4,7 @@ require 'rails_helper'
 
 RSpec.describe GoogleApiService do
   it 'finds an educational video by country', :vcr do
-    response = GoogleApiService.get_educational_video('Thailand')
+    response = GoogleApiService.get_educational_video('Portugal')
 
     expect(response).to be_a(Hash)
     expect(response).to have_key(:items)

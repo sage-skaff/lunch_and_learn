@@ -8,7 +8,7 @@ class GoogleApiService
   end
 
   def self.get_educational_video(country)
-    response = conn.get("/youtube/v3/search?part=snippet&channelId=UCluQ5yInbeAkkeCndNnUhpw&q=#{country}&type=video")
+    response = conn.get("/youtube/v3/search?part=snippet&channelId=UCsT0YIqwnpJCM-mx7-gSA4Q&q=#{country} history&type=video")
 
     JSON.parse(response.body, symbolize_names: true)
   end

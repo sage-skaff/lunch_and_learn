@@ -1,7 +1,9 @@
 # frozen_string_literal: true
 
-class Api::V1::LearningResourcesController < ApplicationController
-    def index
-        
+module Api
+  module V1
+    class LearningResourcesController < ApplicationController
+      def index; end
     end
+  end
 end

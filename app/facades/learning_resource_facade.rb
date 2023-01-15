@@ -6,4 +6,10 @@ class LearningResourceFacade
       Image.new(image_data)
     end
   end
+
+  def self.learning_resource(country)
+    countries_images = images(country)
+    video = GoogleApiService.get_video(country)
+    LearningResource.new(country, countries_images, video)
+  end
 end
