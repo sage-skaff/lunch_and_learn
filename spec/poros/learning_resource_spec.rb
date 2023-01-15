@@ -25,8 +25,10 @@ RSpec.describe LearningResource do
         }
       ]
     }
+    images = image_data.map { |image| Image.new(image) }
+    video = Video.new(video_data)
 
-    learning_resource = LearningResource.new(country, image_data, video_data)
-    expect(learning_resource).to be_an_instance_of(learning_resource)
+    learning_resource = LearningResource.new(country, images, video)
+    expect(learning_resource).to be_an_instance_of(LearningResource)
   end
 end
