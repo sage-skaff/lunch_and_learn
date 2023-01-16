@@ -9,7 +9,7 @@ RSpec.describe 'Post User Registration' do
       "email": 'atano@jedi.com'
     }
 
-    post '/api/v1/users', user: json_payload,
+    post '/api/v1/users', params: json_payload.to_json,
                           headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
@@ -32,7 +32,7 @@ RSpec.describe 'Post User Registration' do
       "email": 'atano@jedi.com'
     }
 
-    post '/api/v1/users', user: json_payload,
+    post '/api/v1/users', params: json_payload.to_json,
                           headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
