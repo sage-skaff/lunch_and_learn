@@ -1,16 +1,20 @@
 # frozen_string_literal: true
 
-class Api::V1::UsersController < ApplicationController
-    def create
+module Api
+  module V1
+    class UsersController < ApplicationController
+      def create
         user = User.create(user_params)
-        if user.save
-            render json: UserSerializer.new(user), status: 201
-        end
-    end
+        return unless user.save
 
-    private
+        render json: UserSerializer.new(user), status: 201
+      end
 
-    def user_params
+      private
+
+      def user_params
         params.require(:user).permit(:name, :email, :api_key)
+      end
     end
+  end
 end
