@@ -36,7 +36,7 @@ RSpec.describe 'Post User Registration' do
                           headers: { 'CONTENT_TYPE' => 'application/json', 'ACCEPT' => 'application/json' }
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
-    
+
     expect(parsed_response).to have_http_status(400)
     expect(parsed_response).to have_key(:errors)
     expect(parsed_response[:errors].first).to have_key(:status)
