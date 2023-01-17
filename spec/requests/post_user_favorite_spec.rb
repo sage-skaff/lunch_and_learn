@@ -40,8 +40,7 @@ RSpec.describe 'Post User Favorite' do
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-    expect(parsed_response).to have_key(:errors)
-    expect(parsed_response[:errors].first).to have_key(:status)
-    expect(parsed_response[:errors].first).to have_key(:message)
+    expect(parsed_response).to have_key(:error)
+    expect(parsed_response[:error]).to eq('Unable to add favorite')
   end
 end
