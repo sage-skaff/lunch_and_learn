@@ -23,10 +23,11 @@ RSpec.describe 'Post User Registration' do
     expect(parsed_response[:data][:attributes]).to have_key(:name)
     expect(parsed_response[:data][:attributes]).to have_key(:email)
     expect(parsed_response[:data][:attributes]).to have_key(:api_key)
+    expect(parsed_response[:data][:attributes][:api_key]).not_to be_empty
   end
 
   it 'returns an error message if email address is already used' do
-    user = User.new(name: 'Ahsoka Tano', email: 'atano@jedi.com', api_key: '000000000')
+    user = User.create!(name: 'Ahsoka Tano', email: 'atano@jedi.com', api_key: SecureRandom.base64)
 
     json_payload = {
       "name": 'Ahsoka Tano',

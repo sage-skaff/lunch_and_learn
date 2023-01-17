@@ -3,11 +3,15 @@
 module Api
   module V1
     class UsersController < ApplicationController
+      include JSONAPI::Errors
       def create
         user = User.create(user_params)
-        return unless user.save
-
-        render json: UserSerializer.new(user), status: 201
+        if user.save
+          user.update(api_key: SecureRandom.base64)
+          render json: UserSerializer.new(user), status: 201
+        else
+          render json: user.errors, status: :bad_request
+        end
       end
 
       private

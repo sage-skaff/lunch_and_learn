@@ -9,6 +9,7 @@ ruby '2.7.2'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
 gem 'figaro'
+gem 'jsonapi.rb'
 gem 'jsonapi-serializer'
 gem 'net-http'
 gem 'pg', '>= 0.18', '< 2.0'
