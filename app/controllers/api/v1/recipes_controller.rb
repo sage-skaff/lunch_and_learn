@@ -6,14 +6,11 @@ module Api
       def index
         if params[:country]
           recipes = RecipeFacade.recipes_by_country(params[:country])
-          render json: RecipeSerializer.new(recipes)
-        elsif params[:country].blank?
+        else
           country = CountryFacade.random_country
           recipes = RecipeFacade.recipes_by_country(country.name)
-          render json: RecipeSerializer.new(recipes)
-        else
-          render json: {"data": []}
         end
+        render json: RecipeSerializer.new(recipes)
       end
     end
   end

@@ -2,7 +2,7 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Get Recipes', vcr: {record: :new_episodes} do
+RSpec.describe 'Get Recipes', vcr: { record: :new_episodes } do
   it 'returns recipes by country' do
     country = 'Thailand'
 
