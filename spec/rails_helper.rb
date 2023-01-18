@@ -82,4 +82,5 @@ VCR.configure do |config|
   config.filter_sensitive_data('<unsplash_id>') { ENV['unsplash_id'] }
   config.filter_sensitive_data('<youtube_api_key>') { ENV['youtube_api_key'] }
   config.configure_rspec_metadata!
+  config.allow_http_connections_when_no_cassette = true
 end
