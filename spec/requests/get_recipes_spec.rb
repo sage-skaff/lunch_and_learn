@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Get Recipes' do
-  it 'returns recipes by country', :vcr do
+RSpec.describe 'Get Recipes', vcr: {record: :new_episodes} do
+  it 'returns recipes by country' do
     country = 'Thailand'
 
     get "/api/v1/recipes?country=#{country}"
@@ -25,7 +25,7 @@ RSpec.describe 'Get Recipes' do
     expect(parsed_response[:data].first[:attributes][:country]).to eq('Thailand')
   end
 
-  xit 'returns empty if empty string is present' do
+  it 'returns empty if empty string is present' do
     get '/api/v1/recipes?country='
 
     expect(response).to be_successful
