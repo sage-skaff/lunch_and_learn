@@ -20,8 +20,9 @@ RSpec.describe 'Get Recipes' do
     expect(parsed_response[:data].first).to have_key(:attributes)
     expect(parsed_response[:data].first[:attributes]).to have_key(:title)
     expect(parsed_response[:data].first[:attributes]).to have_key(:url)
-    expect(parsed_response[:data].first[:attributes]).to have_key(:country)
     expect(parsed_response[:data].first[:attributes]).to have_key(:image)
+    expect(parsed_response[:data].first[:attributes]).to have_key(:country)
+    expect(parsed_response[:data].first[:attributes][:country]).to eq('Thailand')
   end
 
   xit 'returns empty if empty string is present' do
@@ -33,6 +34,7 @@ RSpec.describe 'Get Recipes' do
 
     expect(parsed_response).to be_a(Hash)
     expect(parsed_response).to have_key(:data)
+    expect(parsed_response[:data]).to eq([])
   end
 
   it 'returns random country if no params are present' do
