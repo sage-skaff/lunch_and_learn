@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 class Country
-  attr_reader :name #, :demonym, :subregion
+  attr_reader :name # , :demonym, :subregion
 
   def initialize(country_info)
     @name = country_info[:name][:common]

@@ -6,7 +6,7 @@ RSpec.describe 'Get User Favorites' do
   it 'can get a users favorites' do
     user = User.create(name: 'Ahsoka Tano', email: 'atano@jedi.com', api_key: SecureRandom.base64)
     favorite = user.favorites.create!(country: 'Peru',
-                                     recipe_link: 'https://www.epicurious.com/recipes/food/views/peruvian-ceviche-395483', recipe_title: 'Peruvian Ceviche')
+                                      recipe_link: 'https://www.epicurious.com/recipes/food/views/peruvian-ceviche-395483', recipe_title: 'Peruvian Ceviche')
 
     get "/api/v1/favorites?api_key=#{user.api_key}"
 
@@ -27,14 +27,12 @@ RSpec.describe 'Get User Favorites' do
   it 'returns error message when api_key is invalid' do
     user = User.create(name: 'Ahsoka Tano', email: 'atano@jedi.com', api_key: SecureRandom.base64)
     favorite = user.favorites.create!(country: 'Peru',
-                                     recipe_link: 'https://www.epicurious.com/recipes/food/views/peruvian-ceviche-395483', recipe_title: 'Peruvian Ceviche')
+                                      recipe_link: 'https://www.epicurious.com/recipes/food/views/peruvian-ceviche-395483', recipe_title: 'Peruvian Ceviche')
 
-    get "/api/v1/favorites?api_key=wrong_api_key"
+    get '/api/v1/favorites?api_key=wrong_api_key'
 
     expect(response).to have_http_status(400)
 
     # parsed_response = JSON.parse(response.body, symbolize_names: true)
-
-
   end
 end
