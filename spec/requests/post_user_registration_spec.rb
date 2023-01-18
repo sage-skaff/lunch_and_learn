@@ -41,8 +41,8 @@ RSpec.describe 'Post User Registration' do
 
     parsed_response = JSON.parse(response.body, symbolize_names: true)
 
-    expect(parsed_response).to have_key(:errors)
-    expect(parsed_response[:errors].first).to have_key(:status)
-    expect(parsed_response[:errors].first).to have_key(:message)
+    expected_response = { email: ['has already been taken'] }
+
+    expect(parsed_response).to eq(expected_response)
   end
 end
