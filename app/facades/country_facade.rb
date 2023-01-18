@@ -11,4 +11,8 @@ class CountryFacade
       Country.new(country)
     end
   end
+
+  def self.random_country
+    countries.sample
+  end
 end

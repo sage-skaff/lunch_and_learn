@@ -16,4 +16,10 @@ RSpec.describe CountryFacade do
     expect(country_list).to be_an(Array)
     expect(country_list).to all(be_an_instance_of(Country))
   end
+
+  it 'creates a random country', :vcr do
+    country = CountryFacade.random_country
+
+    expect(country).to be_an_instance_of(Country)
+  end
 end
